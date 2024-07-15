@@ -1,0 +1,17 @@
+//Write an assembly program to take two numbers as input and output their quotient using memory.
+
+LXI H, 2000H
+MOV B,M
+INX H
+MOV C,M
+MVI A,00H
+MVI D,00H
+MOV A,B
+LOOP: SUB C
+INR D
+CMP C
+JNC LOOP
+STA 2001H
+MOV A,D
+STA 2003H
+HLT
